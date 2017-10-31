@@ -1,0 +1,29 @@
+{
+	"name": "@kosbit/form",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/boing6000/kosbit-kbform"
+	},
+	"author": {
+		"name": "Andre Teodoro",
+		"email": "boing6000@hotmail.com"
+	},
+	"private": false,
+	"dependencies": {
+		"@angular/animations": "^4.4.6",
+		"@angular/common": "^4.4.6",
+		"@angular/core": "^4.4.6",
+		"@angular/forms": "^4.4.6",
+		"@angular/http": "^4.4.6",
+		"@angular/router": "^4.4.6",
+		"font-awesome": "^4.7.0",
+		"lodash": "^4.17.4",
+		"primeng": "^4.3.0",
+		"quill": "^1.3.3"
+	},
+	
+	"main": "lib.module.js",
+	"typings": "lib.module.d.ts"
+}

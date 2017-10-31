@@ -1,0 +1,31 @@
+import { NgModel } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ValueAccessorBase } from './value-acessor';
+import { AsyncValidatorArray, ValidationResult, ValidatorArray } from './validate';
+import { EventEmitter, Injector, OnChanges, SimpleChanges } from '@angular/core';
+import { SelectItem } from 'primeng/primeng';
+export declare abstract class ElementBase<T> extends ValueAccessorBase<T> implements OnChanges {
+    private validators;
+    private asyncValidators;
+    private injector;
+    label: string;
+    placeholder: string;
+    name: string;
+    hasFilter: boolean;
+    cssClass: string;
+    nameChange: EventEmitter<string>;
+    abstract model: NgModel;
+    filterOptions: SelectItem[];
+    filterModel: string;
+    filterName: string;
+    filterNameFC: boolean;
+    constructor(validators: ValidatorArray, asyncValidators: AsyncValidatorArray, injector: Injector);
+    ngOnChanges(changes: SimpleChanges): void;
+    filterChanges(filters: SelectItem[], defaultFilter: string, changes: SimpleChanges): void;
+    selectFilter(event?: any): void;
+    isFilterEnabled(): boolean;
+    protected validateInnerModel(): Observable<ValidationResult>;
+    protected readonly invalid: Observable<boolean>;
+    protected readonly failures: Observable<string[]>;
+    private getErrorsFromOuterModel();
+}
